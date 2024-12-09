@@ -95,12 +95,20 @@ https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbkZa90OcLHVauELt9EOd4nZ
 - **Phương thức**:
   - `generatePayslip()`: Tạo nội dung phiếu lương dựa trên dữ liệu tính lương.
   - `printPayslip()`: In phiếu lương hoặc xuất ra file.
+ 
+-**Sơ đồ**:
+
+https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbkZa90OcLnJcO1Lt9EOd4nZATGpQMWeAkGcbkGar-PckgPOgKGN5AKcPSE5Yw0A7BEpoj9pIj1ab9GI4_DIorAB4c5cgEXQQLGbf-P0fOh0AegGPUevN98pKi1EeIB2m000F__0m00
 
 ## 7. Report Class
 - **Mục đích**: Tạo báo cáo về lương, bảng chấm công.
 - **Phương thức**:
   - `generateSalaryReport()`: Tạo báo cáo lương.
   - `generateTimeSheetReport()`: Tạo báo cáo bảng chấm công.
+ 
+-**Sơ đồ**:
+
+https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbkZa9GQa5-KGbNSavYSJ6Ker3DfG04wQbvgKM99Qd1YJc9HPKGAGrDAuMo_CmK50KXcRcfmHcfgILeQcgv75BpKe2MS040003__mC0
 
 ## Mối quan hệ giữa các lớp:
 - **User** và **Employee**: `Employee` kế thừa từ `User`.
@@ -108,3 +116,7 @@ https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbkZa90OcLHVauELt9EOd4nZ
 - **Payroll** cung cấp dữ liệu cho **Payslip** để tạo phiếu lương.
 - **BankPayment** xử lý giao dịch thanh toán dựa trên dữ liệu từ **Payroll**.
 - **Report** cung cấp báo cáo chi tiết dựa trên dữ liệu từ **Payroll** và **TimeSheet**.
+
+- **Sơ đồ các lớp**:
+
+https://www.planttext.com/api/plantuml/png/X5IxRXGn5Etz5LVR094sWdP44IL1Q0kaY0sYlZk-p9XuREC7qGfIKz10JKL9nGTCaOByo7m1lu3diRFZxB9fvd5zvfnpZw_dRtrxuZnQ7oh9s2Eu-zRKNrK9gYZlVY7aVtxc89lwXs6vHEVWZICBdnZ0749yL5XH1ajlXIgweecWQsrvKhHQJb40KXT2FNwImQcEIwZO3HluNrH6wZNHe473wo8bt955pYqvbzHMw6Y94kqwWtCTLf9wg9Jw6bLEaof0C1mzBTGxRIlqGdVkFch1jzOkHKNBaiWVzjRoHEfuxLvB7Qnxg-qLySI6iVezvVvCypGQ5rQLyAtMheCBNCSevM5zjzio9nxojYcNb1Nvo9Z4aAFCWupU--1Q2_jMpqV22MAqUOhgAX9Nf1w82YiTb4yyUOlAOSUzzEY3IyA9eULncmVoCQ0kDrByKhVIUtDpKfZ3PamFEjFAKsjg8bkG8XlR7dWINHDH_lx2gFoQZBPz2bkQFjj-AU7Q0CP9kuUvQK_egwR-Bk13G0LbKt-1GZJrx-IaTcVq-UVvV7kQCbYeagpmZesrsRCP74NGxEdnyT5iCjwnzsu87TlMHd2yRyOmWvU3OSSsjIbkEWSPNFHxzn_iPekcd4Du3qWF6U-5JtlQ_O2Tn9bf_tl_0000__y30000
