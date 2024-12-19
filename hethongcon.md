@@ -1,48 +1,119 @@
 # A wilderness weather station
 ## 1.Thiết kế hệ thống con
-### 1.1Hệ thống Trạm thời tiết
+### 1.1Hệ thống thu thập và xử lý dữ liệu thời tiết
 #### 1.1.1 Hiện thực hóa giao diện 
 
+![PlanText](https://www.planttext.com/plantuml/png/T9EnQXj154Nx-OgBAXjiVu0BOo8NAKm8I92qw_6WMTYTNMRV2AjKvLgb2G4fBa828eQacY6e6E7_U5-GNmYx8cG7IStiBBnxzxnxsJzXSzrGPicLXSWaLHQ38Vld4dSv-uqP86imKgQfhAWpIxdCwymG1cyvF88qXuMPG5O6f5txxjSrfd691mvh5F4txZdyG95pU7ITsGULaLPsD6j8bQdd6mvFnuKt6MNlRILLimVJ2Otcy0d4VbLsysDLrYEgR3PHwVJOEZC1nIybjekSmzn1nwNHdMfO6R9LCLI6b1LYjphEhr9kN6ByVzyUAKwCRY-4xOB3qzdk0VRVoZDCBwONfo8rEhzA5skThPjnc9l4btJy1QahtFL34gds0EPDpsExYCyeuh94mtubTLBKFbSlG5pYzlN5WMnhrsNSbVyvJo2x3ppyC-ph3v1zZ2lPbkRNwQOxojSNjq-Kb7CigIc7EUX8noArE83rRf-eZMaMlpj8zb-xSrtlo0adXlt6GSQVfq9SAtFV_aZYBm000F__0m00](https://www.planttext.com/plantuml/png/T9AnQW9148RxVOg_LD0yW8K8MeOGK4ZQoxcumjskxCqUMbgbjamHqAG82KY4fBebMApu7li4UOMm7Y4UccPdc_dccv_vjjjEHf4caoOiYabfzBdCb6Qih6YsSSCZ4bptPndn52qCX049Nwmd67hxZcJixRr1JOhm8UmMtZuqoW9VlAODv1VvHPrLGSqsUX55rrh5F0kZMXXeC_DsBYjS4kuJiL2u2xofjsiaxejLUyzezeuOkuLxHkAMAJ9Vh6A1t2t_K2TU0vvE-gHqDE9euNA_CI0TSEIBLHgMju_ZYkHXmFGNUDn_nkpMhMB8a61rqz9olp6dHbqbIQkaooNnVvFAlPs3j94Za7jAiLkClPqR2BUKWbKHPxIkJer2J3FtPX3xukNmhYUbEQ4cVR4rYDr7dR4EbyDmGpy0003__mC0))
 
-![PlanText](https://www.planttext.com/plantuml/png/r9EnJiCm48RtFCN9Kv5e9M3BW3emb06f8aNCXtrjhIPsvBiKLQXFni0ZyGh8JYkIGCkC5ykvp-V__nr_ldzCMJ18KvLPZNg3AmBrJ2Xh2b08YlKEYkQ5TonKANZB001qYSnmm8vKMsg7zcL9MkvGS7G1-H6Dwmub0HrNzXlRUciwzK2r3nBxDvpgHLBHVkXnckoMdcg3GgCcJVFMJA_hFakJTK9XYPhW_hzQ6EWUZs-7NhBEHHNas8UUkq1e5bJL552QG4dQilGe0sRMLDPOsPq4ve6OVtROTy-FuImEGGdrXJ0vay8pn69Tqfv38S6wrIKO5En5_riOkZMPWdtmpih0grwJtimmc5SCTEugJeTxI307TJM1HqB3IPewnGyTvw2k9x7BNnlxBd9GD_6y-0ynS5Agidqs9MVYY_q2003__mC0](https://www.planttext.com/plantuml/png/R94nRiCm34LtdK9ZUmLv2P0k6GeKTeFEXFKB6x4abwGI1D3DElH8lK9XEtQ1fkFd_oGVfU_FhvqeiUOmc78KS36pDgx6HuQelO2q0rjFIfKfRujibBHFiHYtJyE0LbV_S1Sun7CwmRPBxecK7XxjEwTW_sGhKnf4ILocxUIj8enWqioeRgKkXzxtUbtro12P_Nko5qujH6vaxfKfIkWtqebahUbqk6iG_UnQJJOB-B-fDSR4QaL9iqp8Lr64vnHxdSdt7TgJxOZzXHXRpjNGpF6tRtbiLwD5VyQobgBV0g9fD3j4FtsD-G400F__0m00)](https://www.planttext.com/plantuml/png/R94nRiCm34LtdK9ZUmLv2P0k6GeKTeFEXFKB6x4abwGI1D3DElH8lK9XEtQ1fkFd_oGVfU_FhvqeiUOmc78KS36pDgx6HuQelO2q0rjFIfKfRujibBHFiHYtJyE0LbV_S1Sun7CwmRPBxecK7XxjEwTW_sGhKnf4ILocxUIj8enWqioeRgKkXzxtUbtro12P_Nko5qujH6vaxfKfIkWtqebahUbqk6iG_UnQJJOB-B-fDSR4QaL9iqp8Lr64vnHxdSdt7TgJxOZzXHXRpjNGpF6tRtbiLwD5VyQobgBV0g9fD3j4FtsD-G400F__0m00)](https://www.planttext.com/plantuml/png/R94nRiCm34LtdK9ZUmLv2P0k6GeKTeFEXFKB6x4abwGI1D3DElH8lK9XEtQ1fkFd_oGVfU_FhvqeiUOmc78KS36pDgx6HuQelO2q0rjFIfKfRujibBHFiHYtJyE0LbV_S1Sun7CwmRPBxecK7XxjEwTW_sGhKnf4ILocxUIj8enWqioeRgKkXzxtUbtro12P_Nko5qujH6vaxfKfIkWtqebahUbqk6iG_UnQJJOB-B-fDSR4QaL9iqp8Lr64vnHxdSdt7TgJxOZzXHXRpjNGpF6tRtbiLwD5VyQobgBV0g9fD3j4FtsD-G400F__0m00))
+#### -Giải thích về Biểu đồ tuần tự:
++ Sensor thu thập dữ liệu từ môi trường như nhiệt độ, độ ẩm và truyền về WeatherSystem.
+
++ Hệ thống con thu thập và xử lý dữ liệu gửi dữ liệu thô tới Bộ xử lý dữ liệu để làm sạch và phát hiện lỗi.
+
++ Sau khi dữ liệu đã được xử lý, Bộ xử lý dữ liệu trả lại dữ liệu đã làm sạch cho hệ thống.
+
++ Hệ thống con thu thập và xử lý dữ liệu lưu trữ tạm thời dữ liệu vào Bộ nhớ tạm.
+
++ Sau khi xác nhận dữ liệu đã được lưu trữ, Hệ thống con thu thập và xử lý dữ liệu truyền dữ liệu về Trung tâm điều hành.
+
++ Trung tâm điều hành nhận dữ liệu và có thể yêu cầu cập nhật hệ thống hoặc các điều chỉnh cấu hình nếu cần.
 
 
-![PlanText](https://www.planttext.com/plantuml/png/r9EnJiCm48RtFCN9Kv5e9M3BW3emb06f8aNCXtrjhIPsvBiKLQXFni0ZyGh8JYkIGCkC5ykvp-V__nr_ldzCMJ18KvLPZNg3AmBrJ2Xh2b08YlKEYkQ5TonKANZB001qYSnmm8vKMsg7zcL9MkvGS7G1-H6Dwmub0HrNzXlRUciwzK2r3nBxDvpgHLBHVkXnckoMdcg3GgCcJVFMJA_hFakJTK9XYPhW_hzQ6EWUZs-7NhBEHHNas8UUkq1e5bJL552QG4dQilGe0sRMLDPOsPq4ve6OVtROTy-FuImEGGdrXJ0vay8pn69Tqfv38S6wrIKO5En5_riOkZMPWdtmpih0grwJtimmc5SCTEugJeTxI307TJM1HqB3IPewnGyTvw2k9x7BNnlxBd9GD_6y-0ynS5Agidqs9MVYY_q2003__mC0)
 
 
-#### 1.1.2 Sơ đồ phụ thuộc hệ thống con
+![PlanText](https://www.planttext.com/plantuml/png/Z5CxQiGm4ErzYYcpXI-W8YpPf0yuIseX3Hk3B9cPMSCISh8KELAk42H_vRKXfQNtcVT6_lt-ER9eaclZ2kCqCrJeEH1y5W00fTMY5LH2jR-a4p31EJJoh4K_7AQhhsAWlwEM3wJgneBDlWgXmRh3fCB9KGtE1mLTg6qFQoaOP1xDvWkMG3rRi6ah2QGlgE0DcpQGfjjmadFGsqGnmGi5Tq8lI0fEoy-HCGMAZDT-ZAaMC0wrJrhBQ7CT2MHHqCWBKI1Uuvv2Y1AppNho_UfIzBNUd99GgCOEjvQJ9VtVSdPzOfldrcf9JcDd-VhByd5yJmgkZBnnd_Ux2xlhH_L5CCG9DmXvLfNc7S2vPGJdT3M-kr7zpdoBinodEAAtyP_w0m00__y30000)
 
-![PlanText](https://www.planttext.com/plantuml/png/Z94z2i9048NxFSMGFXUma1Gs5bOhM0IBqHrqCVl3paGGyMGM7iahI68Wa9XWEtpVUppc_NmLB9YaTfMAUBpWYI3R4SgP4cX1iS63hWzyOo6NmLq109GTqG5xoFCbbElXTG7MnOeSUU4PJvFda1hSK2Hl68AVmLSek4tesLaH-j_JxOHDy5P-jus2MsqyYblBe218-Ag3x0anKGn965XGQkxbRl-45LEuMaDzuqCLv4tpCVK1003__mC0)
+#### -Giải thích biểu đồ lớp
++ Sensor (Cảm biến) có phương thức collectData() để thu thập dữ liệu môi trường.
+
++ WeatherSystem (Hệ thống con thu thập và xử lý dữ liệu) quản lý việc nhận, xử lý, lưu trữ và truyền dữ liệu. Nó có các phương thức như receiveData(), processData(), storeData() và sendData().
+
++ DataProcessor (Bộ xử lý dữ liệu) có các phương thức cleanData() để làm sạch dữ liệu và detectErrors() để phát hiện lỗi.
+
++ TemporaryStorage (Bộ nhớ tạm) lưu trữ dữ liệu tạm thời với phương thức store() để lưu và retrieve() để lấy lại dữ liệu.
+
++ ControlCenter (Trung tâm điều hành) nhận dữ liệu từ hệ thống và có thể yêu cầu cập nhật hoặc các điều chỉnh qua phương thức sendUpdate().
 
 
-### 1.2 Hệ thống quản lý và lưu trữ dữ liệu
+### 1.2 Hệ thống quản lý năng lượng
 
 #### 1.2.1 Hiện thực hóa giao diện 
 
 
-![PlanText](https://www.planttext.com/plantuml/png/T9DFIiD05CRtSuf7DxL2Bv15gSIwKeHMS2dJzD4KuamxUHE95_0QhI22KdJXAbcu6F0UEO5NaFoXJJ9nbtdlVVFzvfl9R_ez3eahqlS1unv91RV8oKSr8quhATnWXOAgrWn5A9Kh1IaP1AYgyZadxkQ5V5MhpNc8jUMPu47yY8gnVgS9nEPDWvSbhneMMVe1mIfBdpHGbhwt1AnJFnorni01XHkD8LNr7EDaO0C0-Hh8pvBzshQsJjtI3aVM23ZWbO6KdShN6kic9gq478KTkC7FfmPIEMaTDp9RUKWUo3TVOWaRpLitPFCt-k10I59X0Nt46B3cL2Khh1m8UMGBMBznyK1Ann1boOkmKpxi5Pajh7tpB83CtlDPOuUcwKQZYWlNtcnoEN5lu1GkfjTNy52Uy6x1YVTAy49IoG_R_PDsOwR6qWuRA4js4kPc9y4pEzd9MZFZvMTdi7LPv-jsO8a25IUSubegoj_n6CKY_tCPOty0003__mC0)
+
+![PlanText](https://www.planttext.com/plantuml/png/X951IWCn58RtESNFx7k1Baf1n5L5qGk4E6G2CoyXyw9qMRo0uWKSIXUA2nUk9eYB5E-H4tW54PIsGzNru_l-zzx_4T-cBKlFeQc5L6mzYcCTShmZqFgQDEhtvnoNf0l85eTKUZq_iy6hKZZfsIZZ936Aqv3x9Q5Eh_ku4tjL-fbkU1SwCgbhqAQEVm-RMJ9ilH3RsHXDTiSOuo2GXihzoe6hz48QR0XDZWzgOFzM_Q2ZoMO_Z77kmpp71VrhsK03m_h6vBW8S5MEjmPiqcC0Lpck_bGC3zhwphvyNAPxS7gY2knptv66CoJ4jAIBhpO_0G00__y30000)
+
+#### -Giải thích về Biểu đồ tuần tự:
+
++ Nguồn năng lượng cung cấp thông tin về mức năng lượng cho Giám sát năng lượng.
+
++ Giám sát năng lượng truyền thông tin về mức năng lượng cho Quản lý năng lượng.
+
++ Quản lý năng lượng điều phối tiêu thụ năng lượng dựa trên mức năng lượng hiện tại.
+
++ Quản lý năng lượng giám sát mức năng lượng và tình trạng của pin qua Giám sát năng lượng.
 
 
+![PlanText](https://www.planttext.com/plantuml/png/R951RW8n34NtEON52XPSW4M5GDqnKYN40Q8PAqITn2FR0w8j9-kYH-8AY75eWRBzp_alJaxVFtDHpzgdrjMj5u7H6-sHeVBP1qoOTGHUO0Yha1G-7G10eXoL-3KZXyDuCcJKQKpn0orSKfO-THef5vw6IgDhwhd6ySGTtTLh02fhZZaCOajBMEG1rU8Lxh2zjjl8mgiY7zRgjPU2wYtMxxVUN_hFRlp6R44HTqoxs9GLIZbZH_nmdwDpVmysdNwzFAmnWusWF9yfmXaiYRY9sIiAxADktNt7ioE5YPjZRYvVUWO00F__0m00)
 
-![PlanText](https://www.planttext.com/plantuml/png/j58nJiD04Epl5Qiqs4No00j5GQ6XI8DVi5mMsyA-S-xMI0PIK_C3g2ZfSK6Hb_W5V06TdSJ1DYLNhNPsHpEpzrrzBIoZuI9BHOxo3YE2oIKomWeLHfIHOWXBovHDu54098h9tA8ak79ZIvsc95cR1coUR5iEzK9ILXjN-WVOiZOq0cw5090fMWl_Ido3bZfEY_TZEytR56JA1cog048sYOf6E2yKfkK3dMZ5jlCNTKIA339TKwuDUqVANgRdJxDPBuq0aYnFcxjO0JrmEfrt7eCs4GjhPDoF7eNs9ft1v32w5U8CLdNrai2cG0LnNJr3bDJL1uBSlKdWUFUgOiZZ-lDTYPw4ERH-brgnSMsdUN-wBWdF7-xrbG_2--rWOE3aLhvOa5gxJot43m000F__0m00)
+#### -Giải thích biểu đồ lớp
 
+- Power Management (Quản lý năng lượng):
 
+  + monitorEnergy(): Giám sát mức năng lượng.
+  + optimizeEnergyConsumption(): Tối ưu hóa việc tiêu thụ năng lượng.
+  + manageEnergySource(): Quản lý các nguồn năng lượng tái tạo.
 
-#### 1.2.2 Sơ đồ phụ thuộc hệ thống con
+  
+- Energy Monitoring (Giám sát năng lượng):
 
-![PlanText](https://www.planttext.com/plantuml/png/Z98zJiD044Pxd-9J6f8Y5t214XbA6bnGe1GJPsHRsBlnxZWY86hgb7HGS0eN53c9Jy0La7z2iEKeRBUptnlDFErtyJMpGaRoD77M53nGo1ZTCKd41hwGn5h1pvTsQuNJ4PuT0BXl4srWqHHzLbORJoinEadOB9mNvzZqYeHmGuf2Jbd9GDCguLLa8DeiZhKbMVvpdIjAja_zzjUFmaPH0hzkQa-CwYKnAwdH2tZxZm1fMUnYP3afH6NnYdLK5f-GA2-Bjy0PeZ6TNgBx01U6ivojjFLgqF6aXzTWtn9S1CtIpSjfikC7BgnemtNyI4wSRkh0LGuhX3R3nBoLsWUodCtsF36eoKN8YWq9t_9Q6nbFVgNNfYKgYvqA4MZLjOxD_br3HPJ_MuF5YeJEhX8VWZDMg-hFD-S7003__mC0)
+  + getEnergyLevel(): Lấy thông tin mức năng lượng.
+  + monitorBatteryStatus(): Giám sát tình trạng của pin.
+  + checkEnergySourceStatus(): Kiểm tra tình trạng các nguồn năng lượng.
+ 
+- Energy Source (Nguồn năng lượng):
 
+  + provideEnergy(): Cung cấp năng lượng từ các nguồn tái tạo như mặt trời, gió.
+  + reportEnergyLevel(): Báo cáo mức năng lượng hiện có.
 
-### 1.3 Hệ thống bảo trì trạm
+  
+### 1.3 Hệ thống con truyền thông qua vệ tinh
 #### 1.3.1 Hiện thực hóa giao diện 
 
 
-[![PlanText](https://www.planttext.com/plantuml/png/T9EnJiCm48RtFCLjj4F5tg52WfM52Z6xwL5R9EVYN42CJ0nCl04HGaX0XP2Oug63UH4_0Q-0d0H18fF1Klwx_FVvxl9bjti52yDbdYKYPMtW10LBD7CMh3JjPmg9ew5E36zbSQX9iJQTTYWKCPAW5EVbehWg6FCkT8IvPZnUBmMZIPATWIcilDqeOEFhYbR0qbKAfBStmDBRErh1vvsljpGeEp2PpFfnc4A1j9mt86raD0x5-rahvQeS2bSnNBZx3cNXAWrfEFfGgTJnU_Oz9xDerWzHatk4Qssu9OecP-wP8FFsDfMmyFL3O76l3UILUouXzVLJsMzjq3Ph8Edh3SDQ-lg98FVsEa-Y9IQpmVTJC7XUOi6jqDBrKy98tbEGojiR-hzWmtactOSAidrC-)
+[![PlanText](https://www.planttext.com/plantuml/png/Z94n3e9044NxFSM_01UW82GKDdPQsAAGi75t8RWKb5IqUWCDCLR4VhUWm8lC2Ro2GGj3eeHgcfdt_iyyRUSVT9ZhGWh6s2hKiH1Snq4g9HmFmro6PPp3nUD8ff7OacbIxCbq6ehiYRFlakDXZ72nwIyxg8HCgqP7awfrNfHaAmLDfk68oDuXEDcwc2zBqlxy1bprj6n1jkKGP6kLO4UcpJu8ZImXSrEGP2ivN_o3D1qW-ESSTM1-hABXJIy0003__mC0](https://www.planttext.com/plantuml/png/Z94n2iCm34Ltdq9apmKoX43erYszW8WLCDYoiMLApzQXH-eLYjCXTQ5fHkd_zpz2p_jZI89HihCgO1Gpcu0iq4mePAqH6hrpcSsCOZmtW0aggQOgynbl55UYhDT9gGg6jjyqwE34AKU2sJFJN2BKfhPzNGmTZ9uN4zsdVpV-4f6JCm8Q1Oz55oV8cqlfRyD4h27vHQuO2NBGAEKSvv3riS9Vy6xjw5sm9FHDApKGw_BR5m000F__0m00))
 
+#### -Giải thích về Biểu đồ tuần tự:
+- SatelliteCommunication yêu cầu CommunicationLayer đảm bảo kết nối vệ tinh.
+  
+- CommunicationLayer xác nhận kết nối với SatelliteCommunication.
+  
+- SatelliteCommunication tự động truyền tải dữ liệu về CommunicationLayer.
+  
+- CommunicationLayer xác nhận hoàn tất việc truyền tải dữ liệu.
+  
+- SatelliteCommunication gửi lệnh cập nhật phần mềm cho CommunicationLayer.
 
-[![PlanText](https://www.planttext.com/plantuml/png/T98zRiCm38LtdOB8Kdl81JmKkO2N64LdLcOieRRaI1IAeiYSEJTefuxTww53Jk8Jz0g5Vz1QHQAHZ_pU8w7lxclZ6Hs7fXOjoaUi25OvQiDaq4Y28ZpuPy_KhE1500386hs7Wf63pwtHRDsiZA-PIiKuawH_WYTJJbDRQgtZMJk81NLBZMMwQqjaYgXXB1Lsnq_eQ8brv8aZjuYuMELtaoMu9RUphbcqHPcbeZBKSo8V6yGdMAzlBvjbrpQ_s3rWuYjau6WVoFDKI59n4E86yhuxQTW7DA3wxWYLxhiF17b-ay3g_6eKjAh_V3VYdf0LkI61jcPqYAFF2SS0avAaucgwVxWCsEcg8XUVK6p8bCEdcjuF0000__y30000)
+- CommunicationLayer xác nhận lệnh cập nhật phần mềm.
 
-#### 1.3.2 Sơ đồ phụ thuộc hệ thống con
+- SatelliteCommunication nhận xác nhận và hoàn tất việc cập nhật phần mềm.
 
+[![PlanText](https://www.planttext.com/plantuml/png/V90n3i8m34Ntd29YQeTUWAbI6TcW1p2f4P4IfufT98Gu6GD7uWgeRO2Y0kl_jl_plrzl9Gj4wRnJnW6pNcn0q3ahM0NlEx86n0PQwBFIMcjaWPspVAW24PhUolB1aGZ4tieA198KqQ0zOjqsC9u3Qf9bWcyTIlAoN5tK4-0ZTmqdZAzmuYxYBDa4sjlePpeZDHEQDDOhsv6L-JtybtLOdAB-RAaelZ-mr3KZArKYDNtP3m000F__0m00)
 
-[![PlanText](https://www.planttext.com/plantuml/png/Z98zJiD048NxFSLJ6f8Y5qY18WNAD8aG1KenEAFO8fvrTcSH255JfwI3WbEueCX9V0AkWFmJ4eCZiUNC-tRUlDsl_7FibPo6T6qoYkvenUXTCsdC3dCbJQnW7cxzerTEUtWo073JA1h1mZoR0psbH9I59E8EiaI2drf9rBf5NJiYVe2cDUFKAbzbIr9sxJcN3yfEQ8rv1VWJvYRhX4Khz0oJtNk4jCYt2JQ1176Hlo2BY_m36eSYVurC5utXy1pj1aPml0dijQbVa59_y0klmDRA6C6pB6lFTQS_C6r92NLbicShyOmpwxG_C9tAyehPSNO7ltMXsshdylNKdtdx6AliD2xohQmGMMddYFlTcuN45FuRYOUlggSN-lC2AGcjs2Cz46RCiYn_StM-0G00__y30000)
+#### -Giải thích biểu đồ lớp
+
+- SatelliteCommunication:
+
+  + establishConnection(): Thiết lập kết nối vệ tinh.
+  + transmitData(): Truyền tải dữ liệu qua vệ tinh.
+  + receiveUpdateCommand(): Nhận lệnh cập nhật phần mềm.
+  + completeUpdate(): Hoàn tất việc cập nhật phần mềm.
+  + CommunicationLayer:
+
+  + ensureConnection(): Đảm bảo kết nối vệ tinh.
+  + confirmConnection(): Xác nhận kết nối.
+  + sendData(): Gửi dữ liệu qua vệ tinh.
+  + confirmDataTransmission(): Xác nhận việc truyền tải dữ liệu.
+  + receiveUpdateCommand(): Nhận lệnh cập nhật phần mềm.
+  + confirmUpdate(): Xác nhận cập nhật phần mềm.
+
