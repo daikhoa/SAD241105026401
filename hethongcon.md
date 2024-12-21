@@ -1,9 +1,9 @@
 # A wilderness weather station
 ## 1.Thiết kế hệ thống con
-### 1.1Hệ thống Trạm thời tiết (WeatherStation)
+### 1.1Hệ thống Trạm thời tiết
 #### 1.1.1 Hiện thực hóa giao diện 
 
-![PlanText](https://www.planttext.com/plantuml/png/T5JDQXin4BxhAUROGjm7yC649hI5_X2m3pdqecxKbR1MwsfdtVfeSZ2zrQTIGY7k4d8oJMbEAueFQ_8UymHzXIB_iRAt5udLpdpppJUVzDSjZZFa5lD4CnvXQW5EX47BTNUKeKYOCAXm15rXijHcsyzJZlpCff78ijHk3tiY6NGnjJmMsoCuIpyA-veR7ejTt3EUQpmLA7ozNMINez1QeJX9auInJK5eTS9Yq8RdvEOABiZz1At8JN90MTspCAmXxvpS77Jr1uRLDUZgEe6Cobaawr27A05RQCDBHUuo0RGSDBclQeM6rTn8aEIAWJ-TG4JkbWV08Ku3lQVLBDr0FZ9KBdA8gj-F3mdL9TscHNuPKdbZO3abDmQpl3Gnw8SxSeM9MP3JK7lvHP4Rvn19Sf-Dz7kvM45zsuC29FTh_SV4X-I2AOPgzQbS81XoKmL3hn4g8ndN26zMtVPbTMzYt_H_Gc6FTgjJjnoquTN3NGvelUX8vIm1bEI-1rPX4EGqIa6kK045JULCCQ4pqSHXl-L3UowdLG6VDkvZmbomCAVL2IyTjA5dyn6viGbjJkvAUPTDLfrD_JHixjVgHy92Y0PYvzKi0YEfd9ljLbUckyzfNvdUUa3llDVMydp8gImyXpLNfB9GZ9aK1LWLIuJq_G7AYu1-pKo0qjzaAkU3evrQwziL5AYJFdfhl46k5FIbfxBpQgCF-b91GkKDrgVxXB5ZOIxy0_WF003__mC0))
+![PlanText](https://www.planttext.com/plantuml/png/T5JDQXin4BxhAUROGjm7yC649hI5_X2m3pdqecxKbR1MwsfdtVfeSZ2zrQTIGY7k4d8oJMbEAueFQ_8UymHzXIB_iRAt5udLpdpppJUVzDSjZZFa5lD4CnvXQW5EX47BTNUKeKYOCAXm15rXijHcsyzJZlpCff78ijHk3tiY6NGnjJmMsoCuIpyA-veR7ejTt3EUQpmLA7ozNMINez1QeJX9auInJK5eTS9Yq8RdvEOABiZz1At8JN90MTspCAmXxvpS77Jr1uRLDUZgEe6Cobaawr27A05RQCDBHUuo0RGSDBclQeM6rTn8aEIAWJ-TG4JkbWV08Ku3lQVLBDr0FZ9KBdA8gj-F3mdL9TscHNuPKdbZO3abDmQpl3Gnw8SxSeM9MP3JK7lvHP4Rvn19Sf-Dz7kvM45zsuC29FTh_SV4X-I2AOPgzQbS81XoKmL3hn4g8ndN26zMtVPbTMzYt_H_Gc6FTgjJjnoquTN3NGvelUX8vIm1bEI-1rPX4EGqIa6kK045JULCCQ4pqSHXl-L3UowdLG6VDkvZmbomCAVL2IyTjA5dyn6viGbjJkvAUPTDLfrD_JHixjVgHy92Y0PYvzKi0YEfd9ljLbUckyzfNvdUUa3llDVMydp8gImyXpLNfB9GZ9aK1LWLIuJq_G7AYu1-pKo0qjzaAkU3evrQwziL5AYJFdfhl46k5FIbfxBpQgCF-b91GkKDrgVxXB5ZOIxy0_WF003__mC0)
 
 #### -Giải thích về Biểu đồ trình tự:
 + Sensors (Cảm Biến Thời Tiết) gửi dữ liệu thô tới DataProcessor (Bộ Xử Lý Dữ Liệu Tại Chỗ).
@@ -95,21 +95,17 @@ Satellite Comm tự động gửi thông báo xác nhận về việc dữ liệ
 
 
 
-![PlanText](https://www.planttext.com/plantuml/png/b99DJiCm48NtFiMx01V80bKg4aAmG1G4MyirZQN4YPmnIjOiMFS6hQek8yes5cAHglVm2RW2Iab_2H8ilF6yzysRqNowZrv6t92D8yO59GQubvn2QGR4IIMw_UrBJOP7Wo8Z6JF6W9GRKaAbNDEcUiQ9tyWqoHGbfZZIeAbUcqJ8B5DwTASL7IaQmOKcQHwva8onmo0uEUr08C2vTwN2qBjNHCgx5miAc-UhCiLol5fuDnEim_eRyC6x4b7zZgTwWgYUnCXyDHNXVe__y2wLTyynoF0rCQ-deeddtiGVY9shHO2hrSA2JEFV7tqvhcV8sm5OjxdDkLqr0lIj7a7uQfx-f4NRJkk8EziktVTP8C2jiGLowwiv7Sp6Ub8Fcnlx0W00__y30000)
+![PlanText](https://www.planttext.com/plantuml/png/p9F1IiD054NtynMNxls1BgGb0JSMGiSINOxfq0maap3pKjgbAzUkN0aM4K4GTPiWNKJyZ_a2Vq4IgxQbY4ktmpdltVjWtgjbpv8mLAG94n5b1g4K54l3IP3AD8H5o5ak3Ab8vK8JEhuWWO7GOY9JgGb2Zy4fCs8YmOjJExSaqqvZ-WE-vNfIan49sXb3cMTMKMRcBUtvmnsB0fD5qbgb9nXfHPzpWz4ckGgDlXR9t2eB_XCYx6zdI5GgI28mSgoYjkKQxWMSiP1ZRx-DtyM1gnuKngvwHA9STLw0ObTTAP1ovP9OGxLqCEhYs5KFIEeNJEjhpEf5rCBFqRhF_63qBHpMrociAnTHlB6ZyVEuNX3Yva4ZSTMb-b8zVzZ5uTjJ0JADj6w-NjGtcAroC1RsrxgSrFS58bVUDM8nnwnmvIrjXblLQLSSxOQsBk3vmvyLHyQLDvYwwkmFDmlxl0klq9Ccr6t-Yy6yu1_ty88_z-X9FMv-smS0003__mC0)
 
 #### -Giải thích về Biểu đồ trình tự:
 
-+ Weather Station(Trạm Thời Tiết ) gửi dữ liệu thu thập được từ các cảm biến tới Data Processing Unit(Bộ Xử Lý Dữ Liệu).
++ WeatherStation (WS): Trạm thời tiết gửi dữ liệu thời tiết đã thu thập được đến hệ thống quản lý và lưu trữ dữ liệu.
 
-+ Bộ Xử Lý Dữ Liệu thực hiện các bước xử lý dữ liệu bao gồm:
-  
-Xử lý và làm sạch dữ liệu.
++ Data Management and Storage Subsystem (DMSS): Hệ thống nhận dữ liệu thời tiết và chuyển tiếp đến bộ xử lý dữ liệu.
 
-Kiểm tra và xác thực dữ liệu để đảm bảo tính chính xác trước khi lưu trữ.
++ Data Processing Unit (DPU): Xử lý dữ liệu thô, làm sạch dữ liệu, phát hiện lỗi, và xác thực dữ liệu trước khi lưu trữ.
 
-+ Sau khi dữ liệu đã được xử lý và xác thực, Data Processing Unit(Bộ Xử Lý Dữ Liệu) gửi dữ liệu đã xử lý tới Central Data Repository(Kho Dữ Liệu Trung Tâm) để lưu trữ.
-
-+ Repository(Kho Dữ Liệu Trung Tâm) lưu trữ dữ liệu và cung cấp dữ liệu này cho Data Interface ( Giao Diện Dữ Liệu) khi có yêu cầu.
++ 
 
 + Data Interface ( Giao Diện Dữ Liệu) nhận dữ liệu từ Repository(Kho Dữ Liệu Trung Tâm) và cung cấp cho Central System ( Hệ Thống Trung Tâm) khi có yêu cầu truy xuất.
 
@@ -229,12 +225,58 @@ nhậnBáoCáoTìnhTrạng: Nhận báo cáo tình trạng từ trạm thời ti
 + Maintenance System: Cập nhật phần mềm và cấu hình lại hệ thống.
 
 
+### 1.1 Hệ Thống Truyền Thông
+#### 1.1.1 Hiện thực hóa giao diện 
+
+[![PlanText](https://www.planttext.com/plantuml/png/Z9EnIWD148RxVOh_1No1524GmIBQ647RzRBabknDucKkO2aMgLDO2Waf9MXXTOkaEF4zvWby1LcqkBsSa6vXThwP__ztl_s-DsUTSv4vDTCvsyJED36kZURKv4FMRASKbJ3KR9opRFhJB8jAfvhrXIOzDfaXZafzGvnh5svScjbKgNW2JhgDcUZWAYt0gPIx6KRYN-6i-6K15l-2HCfjXbihvPwEOTs8ty5L7rXKwq1ueZ5IyTi8tGAAnAA3C_4x6wtpkQgs4L75FIsGWHN_c85pZOcKUmQ9Nrain2_1bbAb7MDGgt1QhIb5KhtJM06D3CA8sFfWNbxSYt-WQDUxGjUc152ZxwJRJ0eTd7-z5U0ySEfcjRSVEbzj4b28aNwz-ZlNKSRDJIHuaWQfXxgFIBfzMx2Kcomy9_zi_q4rO-g7or52JigDLOP6IlKCZSAl-G400F__0m00)
+
+#### -Giải thích biểu đồ trình tự
+
++ Trạm Thời Tiết (Weather Station): Đại diện cho các trạm thời tiết, nơi thu thập và xử lý dữ liệu từ các cảm biến.
+
++ Bộ Truyền Thông Vệ Tinh (Satellite Communication Module): Chịu trách nhiệm kiểm tra kết nối vệ tinh và truyền dữ liệu từ trạm thời tiết về trung tâm.
+
++ Hệ Thống Quản Lý Dữ Liệu (Data Management System): Nhận và xử lý dữ liệu từ trạm thời tiết và gửi đến kho dữ liệu trung tâm.
+
++ Kho Dữ Liệu Trung Tâm (Central Data Repository): Lưu trữ dữ liệu từ các trạm thời tiết.
+
+
+[![PlanText](https://www.planttext.com/plantuml/png/X991QWCn34NtSmgHLRl81MPH0ickIHSTGxiLCo8sjULWIv0Xv6HTz4YzGidKquQcaomjvFVu7ts-VoooO18DlcezvWop5qAnbA0H51Tv1eSA0CIgiRXRwTgHtjsVHdjTz-TlhsgI6Wp6HlSzsghxsJXMew518U-T42nZ2Cgk7KomYPrwAi8tHy4aV2Hv6ccIj2U-flnrh50GDiYufK0iqFHPA1GsM-HhIVRO6gljfUcVC4jYIUXX43xJBcOdCVN5zETR2V6gAEUeoyxdyuVRFTMGYRiC7GfMDxS7v5GjDKX2pi79Y9lQ732JeMl84XCLo8AuErtM5m000F__0m00)
+
+
+#### -Giải thích biểu đồ lớp
+
++ Weather Station gửi dữ liệu tới Satellite Communication Module.
+
++ Satellite Communication Module truyền dữ liệu tới Data Management System.
+  
++ Data Management System lưu trữ dữ liệu vào Central Data Repository.
 
 
 
 
 
+[![PlanText](https://www.planttext.com/plantuml/png/V94nJiD044NxFSLNggJ81L95meA6q1XmFN96oKhhTRGxHbY8Ye93qD1GMb1xXL94uXvx0gw0xCWeYWZrU_FdQ-OxRETUo4bL64Mvb0wZZ4dMx90AYIxj2EIHfGDDITWOBOopiYWgg_FUGbfxuQANKvB1JaW82xAqueAj75h9uZVpnhFp60-Bpql7ENbXvoUzsdEb7ET2TcKOexztFoWWIp6TOdmHGwEHnF2EInt3SpLHw8gTXibYFtcrZcrZZ-c-OiUlNLNZDhPlHywZKgVpCKE-hkeOdYn4ntQxmRB3fiUG65vqVv5_Mc26-nWQcDqdxdQlC5yV5SHrna6MchDTTj_y0G00__y30000)
 
+#### -Giải thích biểu đồ ngữ cảnh
+
++ Weather Station (Trạm Thời Tiết): Gửi dữ liệu thu thập được từ các cảm biến thời tiết.
+
++ Satellite Communication System (Hệ Thống Truyền Thông Vệ Tinh): Chịu trách nhiệm truyền tải dữ liệu từ Trạm Thời Tiết tới Hệ Thống Quản Lý Dữ Liệu.
+
++ Data Management System (Hệ Thống Quản Lý Dữ Liệu): Nhận và xử lý dữ liệu từ hệ thống truyền thông vệ tinh, sau đó lưu trữ và quản lý chúng.
+
++ Users (Người Dùng - Dự Báo Thời Tiết): Truy vấn và yêu cầu dữ liệu từ Hệ Thống Quản Lý Dữ Liệu để phục vụ cho công tác dự báo thời tiết hoặc phân tích khí hậu.
+
++ Communication System: Hệ thống truyền thông bao gồm các chức năng gửi và nhận dữ liệu qua vệ tinh giữa các thành phần trong hệ thống.
+
+- Các mối quan hệ:
+
++ Weather Station gửi dữ liệu tới Satellite Communication System để truyền tải dữ liệu.
+
++ Satellite Communication System chuyển tiếp dữ liệu tới Data Management System.
+
++ Users có thể truy vấn dữ liệu từ Data Management System để phục vụ cho các mục đích dự báo hoặc phân tích thời tiết.
 
 
 
