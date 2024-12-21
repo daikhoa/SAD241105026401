@@ -1,119 +1,243 @@
 # A wilderness weather station
 ## 1.Thiết kế hệ thống con
-### 1.1Hệ thống thu thập và xử lý dữ liệu thời tiết
+### 1.1Hệ thống Trạm thời tiết (WeatherStation)
 #### 1.1.1 Hiện thực hóa giao diện 
 
-![PlanText](https://www.planttext.com/plantuml/png/T9EnQXj154Nx-OgBAXjiVu0BOo8NAKm8I92qw_6WMTYTNMRV2AjKvLgb2G4fBa828eQacY6e6E7_U5-GNmYx8cG7IStiBBnxzxnxsJzXSzrGPicLXSWaLHQ38Vld4dSv-uqP86imKgQfhAWpIxdCwymG1cyvF88qXuMPG5O6f5txxjSrfd691mvh5F4txZdyG95pU7ITsGULaLPsD6j8bQdd6mvFnuKt6MNlRILLimVJ2Otcy0d4VbLsysDLrYEgR3PHwVJOEZC1nIybjekSmzn1nwNHdMfO6R9LCLI6b1LYjphEhr9kN6ByVzyUAKwCRY-4xOB3qzdk0VRVoZDCBwONfo8rEhzA5skThPjnc9l4btJy1QahtFL34gds0EPDpsExYCyeuh94mtubTLBKFbSlG5pYzlN5WMnhrsNSbVyvJo2x3ppyC-ph3v1zZ2lPbkRNwQOxojSNjq-Kb7CigIc7EUX8noArE83rRf-eZMaMlpj8zb-xSrtlo0adXlt6GSQVfq9SAtFV_aZYBm000F__0m00](https://www.planttext.com/plantuml/png/T9AnQW9148RxVOg_LD0yW8K8MeOGK4ZQoxcumjskxCqUMbgbjamHqAG82KY4fBebMApu7li4UOMm7Y4UccPdc_dccv_vjjjEHf4caoOiYabfzBdCb6Qih6YsSSCZ4bptPndn52qCX049Nwmd67hxZcJixRr1JOhm8UmMtZuqoW9VlAODv1VvHPrLGSqsUX55rrh5F0kZMXXeC_DsBYjS4kuJiL2u2xofjsiaxejLUyzezeuOkuLxHkAMAJ9Vh6A1t2t_K2TU0vvE-gHqDE9euNA_CI0TSEIBLHgMju_ZYkHXmFGNUDn_nkpMhMB8a61rqz9olp6dHbqbIQkaooNnVvFAlPs3j94Za7jAiLkClPqR2BUKWbKHPxIkJer2J3FtPX3xukNmhYUbEQ4cVR4rYDr7dR4EbyDmGpy0003__mC0))
+![PlanText](https://www.planttext.com/plantuml/png/T5JDQXin4BxhAUROGjm7yC649hI5_X2m3pdqecxKbR1MwsfdtVfeSZ2zrQTIGY7k4d8oJMbEAueFQ_8UymHzXIB_iRAt5udLpdpppJUVzDSjZZFa5lD4CnvXQW5EX47BTNUKeKYOCAXm15rXijHcsyzJZlpCff78ijHk3tiY6NGnjJmMsoCuIpyA-veR7ejTt3EUQpmLA7ozNMINez1QeJX9auInJK5eTS9Yq8RdvEOABiZz1At8JN90MTspCAmXxvpS77Jr1uRLDUZgEe6Cobaawr27A05RQCDBHUuo0RGSDBclQeM6rTn8aEIAWJ-TG4JkbWV08Ku3lQVLBDr0FZ9KBdA8gj-F3mdL9TscHNuPKdbZO3abDmQpl3Gnw8SxSeM9MP3JK7lvHP4Rvn19Sf-Dz7kvM45zsuC29FTh_SV4X-I2AOPgzQbS81XoKmL3hn4g8ndN26zMtVPbTMzYt_H_Gc6FTgjJjnoquTN3NGvelUX8vIm1bEI-1rPX4EGqIa6kK045JULCCQ4pqSHXl-L3UowdLG6VDkvZmbomCAVL2IyTjA5dyn6viGbjJkvAUPTDLfrD_JHixjVgHy92Y0PYvzKi0YEfd9ljLbUckyzfNvdUUa3llDVMydp8gImyXpLNfB9GZ9aK1LWLIuJq_G7AYu1-pKo0qjzaAkU3evrQwziL5AYJFdfhl46k5FIbfxBpQgCF-b91GkKDrgVxXB5ZOIxy0_WF003__mC0))
 
-#### -Giải thích về Biểu đồ tuần tự:
-+ Sensor thu thập dữ liệu từ môi trường như nhiệt độ, độ ẩm và truyền về WeatherSystem.
+#### -Giải thích về Biểu đồ trình tự:
++ Sensors (Cảm Biến Thời Tiết) gửi dữ liệu thô tới DataProcessor (Bộ Xử Lý Dữ Liệu Tại Chỗ).
 
-+ Hệ thống con thu thập và xử lý dữ liệu gửi dữ liệu thô tới Bộ xử lý dữ liệu để làm sạch và phát hiện lỗi.
++ DataProcessor (Bộ Xử Lý Dữ Liệu Tại Chỗ) thực hiện xử lý và làm sạch dữ liệu.
 
-+ Sau khi dữ liệu đã được xử lý, Bộ xử lý dữ liệu trả lại dữ liệu đã làm sạch cho hệ thống.
++ DataProcessor (Bộ Xử Lý Dữ Liệu Tại Chỗ) kiểm tra tính hợp lệ và lỗi của dữ liệu thông qua FaultDetector (Bộ Giám Sát Lỗi).
 
-+ Hệ thống con thu thập và xử lý dữ liệu lưu trữ tạm thời dữ liệu vào Bộ nhớ tạm.
++ Nếu có vấn đề về năng lượng, DataProcessor (Bộ Xử Lý Dữ Liệu Tại Chỗ) báo cáo và PowerManager (Bộ Quản Lý Năng Lượng) điều chỉnh chế độ năng lượng tự động.
 
-+ Sau khi xác nhận dữ liệu đã được lưu trữ, Hệ thống con thu thập và xử lý dữ liệu truyền dữ liệu về Trung tâm điều hành.
++ DataProcessor (Bộ Xử Lý Dữ Liệu Tại Chỗ) kiểm tra kết nối vệ tinh. Nếu không có kết nối, dữ liệu sẽ được chuyển đến TempStorage (Bộ Lưu Trữ Tạm Thời).
 
-+ Trung tâm điều hành nhận dữ liệu và có thể yêu cầu cập nhật hệ thống hoặc các điều chỉnh cấu hình nếu cần.
++ Khi kết nối lại, DataProcessor (Bộ Xử Lý Dữ Liệu Tại Chỗ) sẽ gửi dữ liệu đã lưu trữ qua SatelliteComm (Bộ Truyền Thông Vệ Tinh) tới CentralSystem (Hệ Thống Trung Tâm).
+
++ CentralSystem (Hệ Thống Trung Tâm) xác nhận nhận dữ liệu và SatelliteComm (Bộ Truyền Thông Vệ Tinh) thông báo kết quả truyền tải hoàn tất.
 
 
 
-
-![PlanText](https://www.planttext.com/plantuml/png/Z5CxQiGm4ErzYYcpXI-W8YpPf0yuIseX3Hk3B9cPMSCISh8KELAk42H_vRKXfQNtcVT6_lt-ER9eaclZ2kCqCrJeEH1y5W00fTMY5LH2jR-a4p31EJJoh4K_7AQhhsAWlwEM3wJgneBDlWgXmRh3fCB9KGtE1mLTg6qFQoaOP1xDvWkMG3rRi6ah2QGlgE0DcpQGfjjmadFGsqGnmGi5Tq8lI0fEoy-HCGMAZDT-ZAaMC0wrJrhBQ7CT2MHHqCWBKI1Uuvv2Y1AppNho_UfIzBNUd99GgCOEjvQJ9VtVSdPzOfldrcf9JcDd-VhByd5yJmgkZBnnd_Ux2xlhH_L5CCG9DmXvLfNc7S2vPGJdT3M-kr7zpdoBinodEAAtyP_w0m00__y30000)
+![PlanText](https://www.planttext.com/plantuml/png/X9A_QXj14CRxVOefuy8leC84oqwAn62GYhJBtcHlqTwkcHt9CS55S95QLQeKmgGKCIILbk3YXDzZdo2l4EwFv3lh8Ct13D_lsszcxczyV1rO4iyBAuIoCWIOe0kU0dmM0A2yjQZuJB9yTIHkTvgglYIlC0HFZVAgALjbXLgKxhcKMXDgoTXHvAXcvqIUGjC8wBAfdqX6QmrZssHFDJJ5uigJ96DlkbcgzeGzIOrDaZtGy8HC1XUxpfwxzDT85z99ZUq8HLsSEoHTlL1PNHjM-TGtlObS6ASlV8PTdpToRlaC6HNlTb5uPzZJv2Om5erJLWjgRUZI-s77lYZQ_EYoRdo5Pe5ZxpuQAYGRxxhy61sJjCrJ3TyIpnOBQKtMstntHRT2x4v-VFBYiYDuc-BQG9RYJx0cnQzp8VgI0UP3YckmvP__OFt5ZU2TIV6k02O9DiLlPW3ftMm4f-NAWwe-YxJvuM2xJF4BkEsTqs2V7bAyTth0fR_pqU6CCCiDgF8NpDBcaS6bk1nAq_tpHl3-wM4EJ9KBfysg0CvJ_6vghrbU_dRwqBAVvFZanJc7ecsNvJryQZSi1YmEhb6k5BWyRTRkq4XN_aA8Vm000F__0m00)
 
 #### -Giải thích biểu đồ lớp
-+ Sensor (Cảm biến) có phương thức collectData() để thu thập dữ liệu môi trường.
++ Sensors -> DataProcessor: Gửi dữ liệu
 
-+ WeatherSystem (Hệ thống con thu thập và xử lý dữ liệu) quản lý việc nhận, xử lý, lưu trữ và truyền dữ liệu. Nó có các phương thức như receiveData(), processData(), storeData() và sendData().
+Sensors(Các cảm biến) gửi dữ liệu thô cho DataProcessor(bộ xử lý dữ liệu).
 
-+ DataProcessor (Bộ xử lý dữ liệu) có các phương thức cleanData() để làm sạch dữ liệu và detectErrors() để phát hiện lỗi.
++ DataProcessor -> DataProcessor: Xử lý dữ liệu
 
-+ TemporaryStorage (Bộ nhớ tạm) lưu trữ dữ liệu tạm thời với phương thức store() để lưu và retrieve() để lấy lại dữ liệu.
+DataProcessor(Bộ xử lý dữ liệu) thực hiện các bước xử lý dữ liệu như làm sạch và tổng hợp dữ liệu.
 
-+ ControlCenter (Trung tâm điều hành) nhận dữ liệu từ hệ thống và có thể yêu cầu cập nhật hoặc các điều chỉnh qua phương thức sendUpdate().
++ DataProcessor -> FaultDetector: Kiểm tra lỗi
+
+DataProcessor(Bộ xử lý dữ liệu) kiểm tra lỗi và tính hợp lệ của dữ liệu với sự hỗ trợ của FaultDetector(bộ giám sát lỗi) .
+
++ DataProcessor -> PowerManager: Báo cáo vấn đề năng lượng
+
+DataProcessor(Bộ xử lý dữ liệu)  báo cáo các vấn đề liên quan đến năng lượng cho bộ quản lý năng lượng PowerManager(bộ quản lý năng lượng).
+
++ DataProcessor -> SatelliteComm: Gửi dữ liệu khi có kết nối
+
+DataProcessor(Bộ xử lý dữ liệu)  gửi dữ liệu đã xử lý tới SatelliteComm(bộ truyền thông vệ tinh) khi có kết nối vệ tinh.
+
++ DataProcessor -> TempStorage: Lưu trữ tạm thời khi không có kết nối
+
+Nếu không có kết nối vệ tinh, DataProcessor(bộ xử lý dữ liệu) lưu trữ dữ liệu tạm thời trong TempStorage(bộ lưu trữ tạm thời).
+
++SatelliteComm -> CentralSystem: Gửi dữ liệu đã xử lý
+
+SatelliteComm (Bộ truyền thông vệ tinh) gửi dữ liệu đã xử lý từ các trạm thời tiết tới hệ thống trung tâm CentralSystem(hệ thống trung tâm).
+
++SatelliteComm -> DataProcessor: Xác nhận dữ liệu đã gửi
+
+SatelliteComm (Bộ truyền thông vệ tinh) gửi thông báo xác nhận việc truyền tải dữ liệu thành công đến bộ xử lý dữ liệu DataProcessor(bộ xử lý dữ liệu).
 
 
-### 1.2 Hệ thống quản lý năng lượng
+
+![PlanText](https://www.planttext.com/plantuml/png/Z9A_IWD14CRxUugFLARm1Ima4D52XSW9sgxdSBUujnVtPls3M5bOfn8H2qqTLBJA8XONV8zv0bz1zh1HKwJOgNP-yyttpLVuwDMi7FlI92hZog7J9yjE6QJdDLFPWQhHJvF4KSRAveRGsIF51Jcah5XN5ga_g7y-NoJ0KagshbpTnVBoAfRM52iCN9LHNLUkYnNi5XvSo7GonA649nWjuTg39RnWDf9mQ_E8-TlOqjQLDumrOefg8srJIxWgmKx1IBZHYt46rIavR2khScenErwcOmlJlCFEhcmEy_aiOMppnNYfOZ96Cw5VbMK4RaYOw5yB7dk54mdNO6sBnR2xL0wHSkLKJX6wzVdimIv2MQOFPVGnt6iS5V4rRpP7rhpYIAOV32jXfDj0_eYBw7uwL-Dir8nn9c7IEi4IxZIALdCXOHJTS3xMvh7yjy6yCNFYtsyUCjYOl_q_Ee-AaiiawP4zZ5Vv3G00__y30000)
+#### -Giải thích biểu đồ ngữ cảnh
++ Sensors -> Data Processor: Thu thập dữ liệu tự động
+
+Các cảm biến tự động thu thập dữ liệu từ môi trường (nhiệt độ, độ ẩm, tốc độ gió, v.v.) và gửi dữ liệu này đến Data Processor.
+
++ Data Processor -> Fault Detector: Kiểm tra lỗi tự động
+
+Data Processor tự động kiểm tra lỗi trong dữ liệu và các cảm biến với sự hỗ trợ của Fault Detector.
+
++ Data Processor -> Power Manager: Quản lý năng lượng tự động
+
+Data Processor tự động gửi thông tin về trạng thái năng lượng cho Power Manager, giúp hệ thống điều chỉnh sử dụng năng lượng.
+
++ Data Processor -> Satellite Comm: Gửi dữ liệu qua vệ tinh tự động
+
+Data Processor tự động gửi dữ liệu đã xử lý qua Satellite Comm khi có kết nối vệ tinh.
+
++ Data Processor -> Temp Storage: Lưu trữ tạm thời khi không có kết nối
+  
+Nếu không có kết nối vệ tinh, Data Processor sẽ tự động lưu trữ dữ liệu tạm thời trong Temp Storage.
+
++ Satellite Comm -> Central System: Gửi dữ liệu đã xử lý tới hệ thống trung tâm tự động
+  
+Satellite Comm tự động gửi dữ liệu đã xử lý từ các trạm thời tiết đến Central System qua vệ tinh.
+
++ Satellite Comm -> Data Processor: Xác nhận dữ liệu đã gửi
+  
+Satellite Comm tự động gửi thông báo xác nhận về việc dữ liệu đã được truyền thành công trở lại Data Processor.
+
+### 1.2 Hệ Thống Quản Lý Và Lưu Trữ Dữ Liệu(Data Management and Storage Subsystem)
 
 #### 1.2.1 Hiện thực hóa giao diện 
 
 
 
-![PlanText](https://www.planttext.com/plantuml/png/X951IWCn58RtESNFx7k1Baf1n5L5qGk4E6G2CoyXyw9qMRo0uWKSIXUA2nUk9eYB5E-H4tW54PIsGzNru_l-zzx_4T-cBKlFeQc5L6mzYcCTShmZqFgQDEhtvnoNf0l85eTKUZq_iy6hKZZfsIZZ936Aqv3x9Q5Eh_ku4tjL-fbkU1SwCgbhqAQEVm-RMJ9ilH3RsHXDTiSOuo2GXihzoe6hz48QR0XDZWzgOFzM_Q2ZoMO_Z77kmpp71VrhsK03m_h6vBW8S5MEjmPiqcC0Lpck_bGC3zhwphvyNAPxS7gY2knptv66CoJ4jAIBhpO_0G00__y30000)
+![PlanText](https://www.planttext.com/plantuml/png/b99DJiCm48NtFiMx01V80bKg4aAmG1G4MyirZQN4YPmnIjOiMFS6hQek8yes5cAHglVm2RW2Iab_2H8ilF6yzysRqNowZrv6t92D8yO59GQubvn2QGR4IIMw_UrBJOP7Wo8Z6JF6W9GRKaAbNDEcUiQ9tyWqoHGbfZZIeAbUcqJ8B5DwTASL7IaQmOKcQHwva8onmo0uEUr08C2vTwN2qBjNHCgx5miAc-UhCiLol5fuDnEim_eRyC6x4b7zZgTwWgYUnCXyDHNXVe__y2wLTyynoF0rCQ-deeddtiGVY9shHO2hrSA2JEFV7tqvhcV8sm5OjxdDkLqr0lIj7a7uQfx-f4NRJkk8EziktVTP8C2jiGLowwiv7Sp6Ub8Fcnlx0W00__y30000)
 
-#### -Giải thích về Biểu đồ tuần tự:
+#### -Giải thích về Biểu đồ trình tự:
 
-+ Nguồn năng lượng cung cấp thông tin về mức năng lượng cho Giám sát năng lượng.
++ Weather Station(Trạm Thời Tiết ) gửi dữ liệu thu thập được từ các cảm biến tới Data Processing Unit(Bộ Xử Lý Dữ Liệu).
 
-+ Giám sát năng lượng truyền thông tin về mức năng lượng cho Quản lý năng lượng.
++ Bộ Xử Lý Dữ Liệu thực hiện các bước xử lý dữ liệu bao gồm:
+  
+Xử lý và làm sạch dữ liệu.
 
-+ Quản lý năng lượng điều phối tiêu thụ năng lượng dựa trên mức năng lượng hiện tại.
+Kiểm tra và xác thực dữ liệu để đảm bảo tính chính xác trước khi lưu trữ.
 
-+ Quản lý năng lượng giám sát mức năng lượng và tình trạng của pin qua Giám sát năng lượng.
++ Sau khi dữ liệu đã được xử lý và xác thực, Data Processing Unit(Bộ Xử Lý Dữ Liệu) gửi dữ liệu đã xử lý tới Central Data Repository(Kho Dữ Liệu Trung Tâm) để lưu trữ.
+
++ Repository(Kho Dữ Liệu Trung Tâm) lưu trữ dữ liệu và cung cấp dữ liệu này cho Data Interface ( Giao Diện Dữ Liệu) khi có yêu cầu.
+
++ Data Interface ( Giao Diện Dữ Liệu) nhận dữ liệu từ Repository(Kho Dữ Liệu Trung Tâm) và cung cấp cho Central System ( Hệ Thống Trung Tâm) khi có yêu cầu truy xuất.
 
 
-![PlanText](https://www.planttext.com/plantuml/png/R951RW8n34NtEON52XPSW4M5GDqnKYN40Q8PAqITn2FR0w8j9-kYH-8AY75eWRBzp_alJaxVFtDHpzgdrjMj5u7H6-sHeVBP1qoOTGHUO0Yha1G-7G10eXoL-3KZXyDuCcJKQKpn0orSKfO-THef5vw6IgDhwhd6ySGTtTLh02fhZZaCOajBMEG1rU8Lxh2zjjl8mgiY7zRgjPU2wYtMxxVUN_hFRlp6R44HTqoxs9GLIZbZH_nmdwDpVmysdNwzFAmnWusWF9yfmXaiYRY9sIiAxADktNt7ioE5YPjZRYvVUWO00F__0m00)
+
+![PlanText](https://www.planttext.com/plantuml/png/d9I_Qi907CVtUueVJksW3-1GXBeKB9J6KjVhUKq2oILSVW53wT2fQ_C65N4KxPf3EaHyZtk2la99r6fCOxN3BGVVFx_F_RWlzTaAa4eCNOSmXmO1rEuvHOjBC92YxOaQF140CBMQs6sjfXrRgzVmx9myautYaWkKr04Z2f2xQm7ACEg5EXbZXQfDaS8r5TJaBXS8LFJ1G4zIauCHFWIxPivo5dQbLjE25m0Cj9fqqddfEXsohgNL1_kZSbxYbljUOACdevsuhN3nbevwgvoL-t6ZtKYFyI2mXGbtmiQrTKLX9trt3PqCcNNoA7dObK0k7odZX-bdIJePH_jMvKUlro-gvcYkbW7wMat1oLq0hUpePEB38bxEj1enKY7FdIlvDtFuWDbZ5n8MSJhAwO6JpacrmRRu3fCci52Om7GozikksqHIKXRQRXQycVE5GGvuru-GOzUwqJZ0Tn7RMhs4u5jQnVRFr8Maau8EuDxB-ft-FyOgqDyBgQJNugAVVKNV0000__y30000)
 
 #### -Giải thích biểu đồ lớp
++ Weather Station:
 
-- Power Management (Quản lý năng lượng):
+gửiDữLiệu(): Gửi dữ liệu thu thập được từ các cảm biến vào Data Processing Unit.
 
-  + monitorEnergy(): Giám sát mức năng lượng.
-  + optimizeEnergyConsumption(): Tối ưu hóa việc tiêu thụ năng lượng.
-  + manageEnergySource(): Quản lý các nguồn năng lượng tái tạo.
++ Weather Station:
 
+gửiDữLiệu(): Gửi dữ liệu thu thập được từ các cảm biến vào Data Processing Unit.
+
++ Data Management and Storage Subsystem:
+
+lưuTrữDữLiệu(): Lưu trữ dữ liệu vào Central Data Repository.
+
+xửLýDữLiệu(): Xử lý và làm sạch dữ liệu.
+
+xácThựcDữLiệu(): Xác thực dữ liệu trước khi lưu trữ.
+
++ Central Data Repository:
+
+lưuDữLiệuĐãXửLý(): Lưu trữ dữ liệu đã xử lý.
+
+truyXuấtDữLiệu(): Cung cấp dữ liệu đã lưu trữ khi có yêu cầu.
+
++ Data Processing Unit:
+
+xửLýDữLiệu(): Xử lý và tổng hợp dữ liệu từ các cảm biến.
+
+làmSạchDữLiệu(): Làm sạch dữ liệu thu thập được.
+
+xácThựcDữLiệu(): Xác thực dữ liệu trước khi lưu trữ.
+
++ Data Interface:
+
+truyXuấtDữLiệu(): Truy xuất dữ liệu từ Central Data Repository.
+
+lấyDữLiệu(): Lấy dữ liệu từ Central Data Repository khi có yêu cầu.
+
+
+![PlanText](https://www.planttext.com/plantuml/png/Z94nQiD044NxFSN7lI-W8ZZOa1HA4MIIUY8jac2rCgjPI0YfNUi60P5InBKMaqB6zzWJv0fXJHhRZOgPOc3--_Fdr_qi6YR3jbA2KguDdYLn8Kt2n6Mj_uTOIis6LFBMiAo4C39bqhcIcDrxjyMwyAxLEHwj7pgDUDpZQVn4VDnPh8rttrY55fVURUqCr615J0-aAPULr7ohiuHhGxbCx4jpWk1TuC8CvlER2OiHxhphIsG1gKv8S17A3_q6X_QuywvB1IPe1UA5YIXSD7HdyeTsxF3gNGyrxYSBduMA24khSwH--DfSYwiG9OSenOSG2wcpyB8_0000__y30000)
+
+#### -Giải thích biểu đồ ngữ cảnh
+
++ Weather Station(Trạm thời tiết) gửi dữ liệu thu thập được từ các cảm biến tới Data Processing Unit.
+
++ Data Processing Unit xử lý dữ liệu và sau đó gửi dữ liệu đã xử lý đến Central Data Repository để lưu trữ.
+
++ Central System(Hệ Thống Trung Tâm) có thể truy xuất dữ liệu từ Data Interface.
+
++ Data Interface lấy dữ liệu từ Central Data Repository để cung cấp cho Central System(Hệ Thống Trung Tâm) khi có yêu cầu.
   
-- Energy Monitoring (Giám sát năng lượng):
-
-  + getEnergyLevel(): Lấy thông tin mức năng lượng.
-  + monitorBatteryStatus(): Giám sát tình trạng của pin.
-  + checkEnergySourceStatus(): Kiểm tra tình trạng các nguồn năng lượng.
- 
-- Energy Source (Nguồn năng lượng):
-
-  + provideEnergy(): Cung cấp năng lượng từ các nguồn tái tạo như mặt trời, gió.
-  + reportEnergyLevel(): Báo cáo mức năng lượng hiện có.
-
-  
-### 1.3 Hệ thống con truyền thông qua vệ tinh
+### 1.3 Hệ Thống Bảo Trì Và Cấu Hình Từ Xa
 #### 1.3.1 Hiện thực hóa giao diện 
 
 
-[![PlanText](https://www.planttext.com/plantuml/png/Z94n3e9044NxFSM_01UW82GKDdPQsAAGi75t8RWKb5IqUWCDCLR4VhUWm8lC2Ro2GGj3eeHgcfdt_iyyRUSVT9ZhGWh6s2hKiH1Snq4g9HmFmro6PPp3nUD8ff7OacbIxCbq6ehiYRFlakDXZ72nwIyxg8HCgqP7awfrNfHaAmLDfk68oDuXEDcwc2zBqlxy1bprj6n1jkKGP6kLO4UcpJu8ZImXSrEGP2ivN_o3D1qW-ESSTM1-hABXJIy0003__mC0](https://www.planttext.com/plantuml/png/Z94n2iCm34Ltdq9apmKoX43erYszW8WLCDYoiMLApzQXH-eLYjCXTQ5fHkd_zpz2p_jZI89HihCgO1Gpcu0iq4mePAqH6hrpcSsCOZmtW0aggQOgynbl55UYhDT9gGg6jjyqwE34AKU2sJFJN2BKfhPzNGmTZ9uN4zsdVpV-4f6JCm8Q1Oz55oV8cqlfRyD4h27vHQuO2NBGAEKSvv3riS9Vy6xjw5sm9FHDApKGw_BR5m000F__0m00))
+[![PlanText](https://www.planttext.com/plantuml/png/h9GzRi9048Lxd-A9FXUWY90eKaIfA99sSLRiIdYCx7516QMWpWrYHGW9XGli5Yds97E2N242J6A3WF3JJ34_txnvMkst_-hah38kac6aOaupj1wK9TQaADReZNFMIGigHoszpcxw7xLYepFqMB5D2RsYd_-DLTMg-5lR37SrSQQ6zKLLgbeIxUp5pUq-Ajgu4x-m68TvWLZSR1KN8v0Hjs2CZBWP8H7_aaJx80VvzrRyQmBE54R6XZcXB-w3ha3kdYDqrvqsda8PhpdKlDwauPt0ugPy5L-d1Kpu98EXkD9Ux6UTQApuoKhhkU3kjZuOyHEm4Vz6WmiztIRNZMsyNvncwi26Ca4UIWQl-9o9Am_BFORlXp95l0mDvB_jQDvpX1f57KtFoz_a1m00__y30000)
 
 #### -Giải thích về Biểu đồ tuần tự:
-- SatelliteCommunication yêu cầu CommunicationLayer đảm bảo kết nối vệ tinh.
-  
-- CommunicationLayer xác nhận kết nối với SatelliteCommunication.
-  
-- SatelliteCommunication tự động truyền tải dữ liệu về CommunicationLayer.
-  
-- CommunicationLayer xác nhận hoàn tất việc truyền tải dữ liệu.
-  
-- SatelliteCommunication gửi lệnh cập nhật phần mềm cho CommunicationLayer.
 
-- CommunicationLayer xác nhận lệnh cập nhật phần mềm.
++ Maintenance System: Hệ thống bảo trì gửi yêu cầu cập nhật phần mềm và cấu hình lại cho trạm thời tiết.
 
-- SatelliteCommunication nhận xác nhận và hoàn tất việc cập nhật phần mềm.
++ Weather Station Subsystem: Hệ thống con của trạm thời tiết thực hiện các hành động bảo trì và cấu hình từ xa.
 
-[![PlanText](https://www.planttext.com/plantuml/png/V90n3i8m34Ntd29YQeTUWAbI6TcW1p2f4P4IfufT98Gu6GD7uWgeRO2Y0kl_jl_plrzl9Gj4wRnJnW6pNcn0q3ahM0NlEx86n0PQwBFIMcjaWPspVAW24PhUolB1aGZ4tieA198KqQ0zOjqsC9u3Qf9bWcyTIlAoN5tK4-0ZTmqdZAzmuYxYBDa4sjlePpeZDHEQDDOhsv6L-JtybtLOdAB-RAaelZ-mr3KZArKYDNtP3m000F__0m00)
++ Central System: Hệ thống trung tâm yêu cầu báo cáo tình trạng từ trạm thời tiết.
+
+
+
+
+[![PlanText](https://www.planttext.com/plantuml/png/V98nJiCm58Ptd-AfKplq0WoeQWSwK5GfaH2Z6wpO8dcfaXUa2XWG0pCtm48eKaKka0mCFebFm1MGaqPgeEtoBtv-__V_za_zFSc8fvJ74GiYdcKmM725991Z8C3RP2JY0Jmm00XjNQeRiyrdjYgSbEihQQkIbj9M1Ivi_HmFHmSdF_Ev-K9vQIkjTYFAwDWpcdntuAUsqXZERVtgIrk_OJWSiIVM8LqBJbAau14dbI1u-IhR9xjJjdw9_PGlfJ9RdDhg0_z11IU0WpvYdwCBD3KwcHcTx1FtC6S2AULHlxLDLyEHwm203WgFhp_u9EFnu_d9PixWmb4t02vWqMYvRkq8raq94BiMuDwyjoM0TFOGkHhOgVMj_z_8dUdAw0G29zJiepOFOnE1j-wp_G800F__0m00)
 
 #### -Giải thích biểu đồ lớp
++ Maintenance System: Là lớp đại diện cho hệ thống bảo trì. Các phương thức của lớp này gồm:
+  
+gửiYêuCầuCậpNhậtPhầnMềm: Gửi yêu cầu cập nhật phần mềm.
 
-- SatelliteCommunication:
+gửiYêuCầuCấuHìnhLại: Gửi yêu cầu cấu hình lại hệ thống.
 
-  + establishConnection(): Thiết lập kết nối vệ tinh.
-  + transmitData(): Truyền tải dữ liệu qua vệ tinh.
-  + receiveUpdateCommand(): Nhận lệnh cập nhật phần mềm.
-  + completeUpdate(): Hoàn tất việc cập nhật phần mềm.
-  + CommunicationLayer:
+giámSátTìnhTrạngHệThống: Giám sát và theo dõi tình trạng hệ thống.
 
-  + ensureConnection(): Đảm bảo kết nối vệ tinh.
-  + confirmConnection(): Xác nhận kết nối.
-  + sendData(): Gửi dữ liệu qua vệ tinh.
-  + confirmDataTransmission(): Xác nhận việc truyền tải dữ liệu.
-  + receiveUpdateCommand(): Nhận lệnh cập nhật phần mềm.
-  + confirmUpdate(): Xác nhận cập nhật phần mềm.
+
+
++ Weather Station Subsystem: Là lớp đại diện cho hệ thống con của trạm thời tiết. Các phương thức của lớp này gồm:
+
+kiểmTraPhiênBảnPhầnMềm: Kiểm tra phiên bản phần mềm hiện tại của trạm.
+
+cậpNhậtPhầnMềm: Cập nhật phần mềm của trạm.
+
+cấuHìnhLạiHệThống: Cấu hình lại hệ thống khi có yêu cầu.
+
+gửiBáoCáoTìnhTrạng: Gửi báo cáo tình trạng hệ thống.
+
+
+
++ Central System: Là lớp đại diện cho hệ thống trung tâm. Các phương thức của lớp này gồm:
+  
+yêuCầuBáoCáoTìnhTrạng: Yêu cầu báo cáo tình trạng từ trạm thời tiết.
+
+nhậnBáoCáoTìnhTrạng: Nhận báo cáo tình trạng từ trạm thời tiết.
+
+
+
+
+[![PlanText](https://www.planttext.com/plantuml/png/b98zJiGm48Lxd-8fDNi12hGe1HKDAH2bDp5nf6IoSiP8255GKNC3Kg2L4Bc0Kr3a93u1Lq3vMKYWIkFYwPltvcdyrNvkAvQ6RP4B6NDf45mhoLePH2mvAoc0h31fatGaGqLiP8xelc9L3E0aZSgHkvGPiI99iPgpCtdYXL4nIqfpXU1A5IMhEGH92SAIRhFKcc4HH7PN_HgE8xE9SqeM_0-E1u4_fR3PdArnECM5RviCt7sG1XllQagXVViCrhvzeLJWVyNrAQ5tpHwalMiOU-tTWL3uzgauGUpTcuKU5iYzgpE1vG7MfzrqxxRtFLZSTQzZB67NrINY_bcq5Oz2R1Kb_UVv1W00__y30000)
+
+
+#### -Giải thích biểu đồ ngữ cảnh
++ Weather Station: Gửi tình trạng hệ thống.
+
++ Central System: Yêu cầu và nhận báo cáo tình trạng của hệ thống.
+
++ Maintenance System: Cập nhật phần mềm và cấu hình lại hệ thống.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
