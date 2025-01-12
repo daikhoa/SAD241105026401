@@ -129,7 +129,7 @@
 
 
 
-### 1.4 Communication System
+### 1.4 Remote maintenance and configuration system
 #### 1.4.1 Hiện thực hóa giao diện 
 - Chức năng chính:
 
@@ -141,8 +141,7 @@
   + Communication Controller: Quản lý các hoạt động truyền thông.
 - Liên kết:
 
-  + Nhận dữ liệu từ Hệ thống lưu trữ tạm thời để gửi đi.
-  + Nhận cập nhật từ trung tâm điều khiển và truyền cho các hệ thống liên quan.
+  + Nhận cập nhật từ trung tâm điều khiển và truyền cho trung tâm.
 
 [![PlanText](https://www.planttext.com/plantuml/png/R90nRiCm34LtdUB3Uo-GeGYWeLiN-GA48zX2RSgGwI5ZaQ6p3z2fiz6bapLaI2wY4_GAXPKsI8jknEVZ8y7FUDmEGa76hbLKYGyeIjlrFb3OmuWFL5kO_I2sAq03IgDw2k8grnCB2ksxRcHNaJZFjw3-0neIsxPEREuQafzrshC4tq9R5Xikirgfqk3k7jfWWuSKPuTTYkzeNOel8yvJYWT86FSfFhFIcJKa6vIDIyjHqAPbxl6KQqvnSigGPAF-roXDYgyEagULrj_2Arjb7pTfcUMgMezxN2E6DASFhY6EVwENqygLlCrndavlg5UrsbhUhU__0W00__y30000)
 
@@ -215,22 +214,7 @@
 ### 1.6 Remote Maintenance System
 #### 1.6.1 Hiện thực hóa giao diện 
 
-- Chức năng:
 
-  + Phát hiện sự cố, phần cứng hoặc phần mềm lỗi.
-  + Gửi yêu cầu cập nhật hoặc bảo trì hệ thống từ xa.
-  + Cung cấp khả năng tự động mong đợi và cấu hình tái sinh khi cần thiết.
-- Thành phần:
-
-Trung tâm điều khiển (Control Center):
-Giám sát toàn bộ hệ thống, gửi lệnh bảo trì hoặc cập nhật.
-Lớp truyền thông (Lớp giao tiếp):
-Trung gian truyền lệnh giữa trung tâm và hệ thống bảo trì từ xa.
-Hệ thống bảo trì (Maintenance System):
-Thực hiện các thao tác bảo trì, cập nhật cập nhật hoặc dự đoán lỗi.
-Lớp quản lý lỗi (Lớp quản lý lỗi):
-Phát hiện và báo cáo lỗi, kích hoạt bảo trì từ xa.
-- Liên kết:
 
   + Giám sát hoạt động của các hệ thống khác và thực hiện khôi phục hoặc gửi thông báo lỗi về trung tâm điều khiển qua Hệ thống truyền thông.
 [![PlanText]()
