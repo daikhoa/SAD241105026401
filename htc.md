@@ -129,7 +129,7 @@
 
 
 
-### 1.4 Remote maintenance and configuration system
+### 1.4 Communication System
 #### 1.4.1 Hiện thực hóa giao diện 
 - Chức năng chính:
 
@@ -211,17 +211,16 @@
 
 
 
-### 1.6 Remote Maintenance System
+### 1.6 Remote Configuration and Maintenance System
 #### 1.6.1 Hiện thực hóa giao diện 
 
-
-
-  + Giám sát hoạt động của các hệ thống khác và thực hiện khôi phục hoặc gửi thông báo lỗi về trung tâm điều khiển qua Hệ thống truyền thông.
-[![PlanText]()
+[![PlanText](https://www.planttext.com/plantuml/png/R98nRjim58Ptdk8XUowWeOWZmnqABdPx09PXHQBIeqezdg13XYxrL7IhO1HPOhHToQ63ZDxZdI1NA2G7WQra9FZz__lVJpxalrSTgK2ngONIv0EK7YdukZH89eXM1NBQjGe9BgHoI0OLQYCLgig42r0TI7cEhLIiQMd8Q78UfR-9jPd0rN96BYBvjT4UFxWg1ZN35-iPlZ7O-T0TaMvYDZEaz4qJqUcvL_cCEvrviamfgo34MGbm-GgaBE2Qqo-2mvRJNOHFSUY1md2F5jvpsldf8AGSwTLI5l3Q3Nq3tT0JwA7NG7RuWHPQo-aEHvly6MYuRw3c_Cs9rL8-3HfwFshyyGeEst-_EUyqj7PqiuxpBJwEMgnb0M-6lRPWFQUUW3Z_cUo_OmMQqyy8TefPS-gTMAmdtKOMSFZA-GlQvz1BWItdMo3BUOkLs3nbBJdjMq3BQKz0WLEFrQZi7NGgmaVhNiXmZ5wE9N7UkvdkfCxo29w-HW5l0wVTOz1pfROUtdKc275by6Ryq_y1003__mC0)
 
 #### -Giải thích biểu đồ tuần tự
 
 
+
+[![PlanText](https://www.planttext.com/plantuml/png/Z9KzRjmm48NxFSL0rRhm1RO8dAoH58bJU7C1cfg8XAMXG8u2686B88Lh8qKGf5e4RWAhI2iMBkIBy0IvGh3Q7qkxac8LAiJ7cVVc8w6__k74iR1SPEaa5_9I90ZHEMQ64Sw49aOI9144nJ0tz54dXHMi3S7YoZ5c4NoU0038L3ZNtd4cI2HeDylDandIREpSPBaX97RJewT5jZf9q9vZBhITogrc1WkscfAMqY75hKOB5bouwH5ifOtoUjAorJ7UOyoYHFq9ExAvoJ91yLGs7tjiY3nFhpfRXhMfIRh5bQ04j_axNb-B8kLJP9IDMHCNARQznirIepe8lGcJ6xiMZ0xbPS7c76LdD0VTx4w0QzvjP1QRexFZEKHjZqMM5QJbG4EsWboc-LImcCQ2HSyqTxZMXCP2Bf2SiMxTnxKR5Nai69_9ppQdyYbeTybO7Zs4FRVY-FX5F-aPH8lWIuY3lwC47c-3_mgvgfSCIWT_Gv06_rr7OuM7oSuWUbkNKe4oeLeokE1ByOoAVT1c4Bq9ljJ0DbHBIe1LlTHm4QfV1jZMzz4wVU_b6odwNeMgR6BUa08Pghi2L7rFAXeljuTw1b7z9T_EiLK6ik1_wlyKwvd33A9tklvDS1cg1zwGURmD_XibS17yZ-uWDkbx8GztU5Kl3SZLgmLbc6T_xWyg-3yIM6dW5PA36Uvj6ROp3rMP0ws8y7wywya9KhpwR_m3003__mC0)
 
 
 
